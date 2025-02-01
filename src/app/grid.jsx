@@ -4,7 +4,7 @@ import WordComponent from "./get_word";  // Make sure the path is correct
 export default function Grid() {
   const rows = 6;
   const cols = 5;
-
+  
   return (
     <div>
       <div className="grid grid-rows-6 grid-cols-5 gap-2">
@@ -17,7 +17,7 @@ export default function Grid() {
           </div>
         ))}
       </div>
-
+        Words
       <div>
         <WordComponent /> {/* Rendering WordComponent */}
       </div>
