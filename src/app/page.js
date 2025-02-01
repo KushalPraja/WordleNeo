@@ -1,10 +1,11 @@
-import Image from "next/image"; 
-import WordleGame from "./WordleGame";
+import Wordle from "../app/wordle"
+
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-4 flex flex-col items-center">
-        <WordleGame/>
-    </div>
-  );
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Wordle />
+    </main>
+  )
 }
+
