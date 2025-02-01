@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+// importing words from words.json
+import words from "./words.json"
 
 const WORD_LENGTH = 5
 const MAX_GUESSES = 6
@@ -12,7 +14,7 @@ const KEYBOARD_LETTERS = [
   ["Z", "X", "C", "V", "B", "N", "M"],
 ]
 
-const WORDS = ["REACT", "REDUX", "HOOKS", "STATE", "PROPS"]
+const WORDS = words as string[]
 
 export default function Wordle() {
   const [secretWord, setSecretWord] = useState("")
@@ -24,6 +26,7 @@ export default function Wordle() {
 
   useEffect(() => {
     setSecretWord(WORDS[Math.floor(Math.random() * WORDS.length)])
+    console.log(secretWord)
   }, [])
 
   const handleKeyPress = useCallback(
@@ -89,8 +92,8 @@ export default function Wordle() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between h-screen bg-black text-white p-4 overflow-hidden">
-      <h1 className="text-4xl font-bold mb-4 text-center tracking-tighter">
+    <div className="flex flex-col items-center justify-between bg-black text-white  overflow-hidden">
+      <h1 className="text-4xl font-bold mb-10 text-center tracking-tighter">
         WORDLE<span className="text-neutral-600">NEO</span>
       </h1>
       <div className="w-full max-w-sm mx-auto flex-grow flex flex-col justify-center">
