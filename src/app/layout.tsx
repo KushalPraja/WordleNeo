@@ -11,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} bg-black`}>
-      <body className="font-sans text-white min-h-screen overflow-hidden">{children}</body>
+      <body className="font-sans text-white min-h-screen overflow-visible">{children}</body>
     </html>
   )
 }
